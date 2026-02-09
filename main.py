@@ -33,6 +33,8 @@ instruction_y = 550
 score_x = 200
 score_y = 10
 
+score_sound = pygame.mixer.Sound("score.wav")
+
 # Player Variables -->
 bird_x = 50
 bird_y = 300
@@ -70,9 +72,12 @@ while running:
             running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
+
                 if game_started == False:
                     game_started = True
                     bird_velocity = jump
+
+
                 elif game_over == False:
                     bird_velocity = jump
                 else:
@@ -100,6 +105,7 @@ while running:
             # When you pass through the pipes the score should be updated to the current score + 1. Implement the
             # logic to accomplish this scoring system.
             score = score+1
+            score_sound.play()
 
         if bird_y > 600 or bird_y < 0:
             game_over = True
