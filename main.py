@@ -38,7 +38,7 @@ score_sound = pygame.mixer.Sound("score.wav")
 # Player Variables -->
 bird_x = 50
 bird_y = 300
-bird_velocity = 0
+bird_velocity = 12
 # TODO 1: Tweaking the physics
 # Looks like the player is falling too quickly not giving a change to flap it's wing, maybe tweak around with the value of this variable
 gravity = 1
