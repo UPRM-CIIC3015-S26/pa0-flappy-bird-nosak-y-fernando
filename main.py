@@ -23,6 +23,14 @@ PLAYER = (255, 255, 0)
 big_font = pygame.font.SysFont(None, 80)
 small_font = pygame.font.SysFont(None, 30)
 
+bird_img = pygame.image.load("bird.png")
+bird_img = pygame.transform.scale(bird_img, (30, 30))
+bird_size = 45
+bird_img = pygame.image.load("bird.png")
+bird_img = pygame.transform.scale(bird_img, (bird_size, bird_size))
+
+
+
 # Text Coordinates -->
 title_x = 50
 title_y = 150
@@ -41,7 +49,7 @@ bird_y = 300
 bird_velocity = 12
 # TODO 1: Tweaking the physics
 # Looks like the player is falling too quickly not giving a change to flap it's wing, maybe tweak around with the value of this variable
-gravity = 1
+gravity = .5
 jump = -10
 # Pipe Variables -->
 pipe_x = 400
@@ -57,6 +65,7 @@ pipe_height = random.randint(100, 400)
 pipe_speed = 8
 
 score = 0
+high_score= 0
 game_over = False
 game_started = False
 
@@ -105,12 +114,15 @@ while running:
             # When you pass through the pipes the score should be updated to the current score + 1. Implement the
             # logic to accomplish this scoring system.
             score = score+1
+            if score > high_score:
+                high_score = score
             score_sound.play()
 
         if bird_y > 600 or bird_y < 0:
             game_over = True
 
         bird_rect = pygame.Rect(bird_x, bird_y, 30, 30)
+
         top_pipe_rect = pygame.Rect(pipe_x, 0, pipe_width, pipe_height)
         bottom_pipe_rect = pygame.Rect(pipe_x, pipe_height + pipe_gap, pipe_width, 600)
 
@@ -118,14 +130,20 @@ while running:
             game_over = True
 
     screen.fill(pygame.Color('sky blue'))
+
     # TODO 5: A Bird's Color
     # The color of the player is currently white, let's change that a bit! You are free to change the bird's
     # to whatever you wish. You will need to head back to where the PLAYER variable was created and change the values.
-    pygame.draw.rect(screen, PLAYER, (bird_x, bird_y, 30, 30)) # Drawing the bird (You don't need to touch this line!)
+    screen.blit(bird_img, (bird_x, bird_y))
+
     pygame.draw.rect(screen, GREEN, (pipe_x, 0, pipe_width, pipe_height))
     pygame.draw.rect(screen, GREEN, (pipe_x, pipe_height + pipe_gap, pipe_width, 600))
     score_text = small_font.render(str(score), True, WHITE)
+    high_score_text = small_font.render(f"High Score: {high_score}", True, WHITE)
+    screen.blit(high_score_text, (10, 10))
+
     screen.blit(score_text, (score_x, score_y))
+    bird_rect_draw = pygame.Rect(bird_x, bird_y, 30, 30)
 
     if game_started == False: # Start UI -->
         title_text = big_font.render("Flappy Bird", True, WHITE)
