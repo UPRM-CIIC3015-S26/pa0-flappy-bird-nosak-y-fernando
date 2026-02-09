@@ -41,7 +41,7 @@ bird_y = 300
 bird_velocity = 12
 # TODO 1: Tweaking the physics
 # Looks like the player is falling too quickly not giving a change to flap it's wing, maybe tweak around with the value of this variable
-gravity = 1
+gravity = .5
 jump = -10
 # Pipe Variables -->
 pipe_x = 400
@@ -117,7 +117,7 @@ while running:
         if bird_rect.colliderect(top_pipe_rect) or bird_rect.colliderect(bottom_pipe_rect):
             game_over = True
 
-    screen.fill(pygame.Color('grey12'))
+    screen.fill(pygame.Color('sky blue'))
     # TODO 5: A Bird's Color
     # The color of the player is currently white, let's change that a bit! You are free to change the bird's
     # to whatever you wish. You will need to head back to where the PLAYER variable was created and change the values.
