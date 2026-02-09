@@ -81,6 +81,7 @@ while running:
                     # of the bird)
                     bird_velocity = 0
                     pipe_x = 400
+                    bird_y = 300
                     score = 0
                     game_over = False
                     game_started = True
