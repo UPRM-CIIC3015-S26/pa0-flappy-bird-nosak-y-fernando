@@ -11,6 +11,9 @@ some of the game mechanics.
 screen = pygame.display.set_mode((400, 600))
 pygame.display.set_caption("Flappy Bird")
 
+lobby_music= pygame.mixer.Sound("Lobby music.wav")
+lobby_music.play()
+
 # Colors -->
 # NOTE: This is in the RGB (Red, Green, Blue) format
 WHITE = (255, 255, 255)
