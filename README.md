@@ -14,16 +14,17 @@ The project is designed as an introductory programming assignment (PA0). Most of
 ## 👥 Team Information
 
 ### Partner #1
-- **Name:**
-- **Student Number:**
-- **Email:**
+- **Fernando Prieto:**
+- **802750160:**
+- **fernando.prieto2@upr.edu:**
 
 ### Partner #2
-- **Name:**
-- **Student Number:**
-- **Email:**
+- **Nosak Mercado :**
+- **802750149:**
+- **nosak.mercado@upr.edu:**
 
 ## ⭐ Bonus Features (Optional)
 List and briefly describe any additional features or enhancements implemented beyond the basic requirements.
-- Bonus Feature 1
-- Bonus Feature 2
+- Highscore counter
+- Original bird png from flappy bird
+- Background music
