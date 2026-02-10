@@ -19,7 +19,7 @@ The project is designed as an introductory programming assignment (PA0). Most of
 - **fernando.prieto2@upr.edu:**
 
 ### Partner #2
-- **Nosak Mercado :**
+- **Nosak Mercado  :**
 - **802750149:**
 - **nosak.mercado@upr.edu:**
 
